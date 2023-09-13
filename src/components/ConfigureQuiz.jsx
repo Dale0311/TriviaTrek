@@ -2,7 +2,7 @@
 import Filter from "./Filter";
 import Category from "./Category";
 import StartQuiz from "./StartQuiz";
-function ConfigureQuiz({ name }) {
+function ConfigureQuiz({ name, configureQuiz, setConfigureQuiz }) {
   return (
     <div className="space-y-4">
       <div className="text-white p-4">
@@ -12,9 +12,12 @@ function ConfigureQuiz({ name }) {
         </p>
       </div>
       <div className="w-full bg-white rounded-t-3xl">
-        <div className="container mx-auto">
-          <Filter />
-          <Category />
+        <div className="container mx-auto space-y-4">
+          <Filter setConfigureQuiz={setConfigureQuiz} />
+          <Category
+            configureQuiz={configureQuiz}
+            setConfigureQuiz={setConfigureQuiz}
+          />
           <StartQuiz />
         </div>
       </div>
