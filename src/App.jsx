@@ -14,7 +14,7 @@ function App() {
   });
   const [isConfigureQuiz, setIsConfigureQuiz] = useState(true);
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto h-screen">
       {/* Welcome component */}
       <Welcome
         name={name}
@@ -22,7 +22,7 @@ function App() {
         showModal={showModal}
         setShowModal={setShowModal}
       />
-      <div className="bg-gradient-to-r from-indigo-500 to-indigo-400 md:w-1/2 mx-auto ">
+      <div className="bg-gradient-to-r from-indigo-500 to-indigo-400 md:w-1/2 mx-auto h-full">
         {isConfigureQuiz ? (
           <ConfigureQuiz
             name={name}

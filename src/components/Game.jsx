@@ -4,11 +4,7 @@ import GameInfo from "./GameInfo";
 
 function Game({ configureQuiz }) {
   const [showGameInfo, setShowGameInfo] = useState(true);
-  return (
-    <div>
-      <GameInfo configureQuiz={configureQuiz}/>
-    </div>
-  );
+  return <GameInfo configureQuiz={configureQuiz} />;
 }
 
 export default Game;
