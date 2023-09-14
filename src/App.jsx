@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Welcome from "./components/Welcome";
 import ConfigureQuiz from "./components/ConfigureQuiz";
-import Game from "./components/Game";
+import GameUi from "./components/GameUI";
 
 function App() {
   // States
@@ -31,7 +31,7 @@ function App() {
             setIsConfigureQuiz={setIsConfigureQuiz}
           />
         ) : (
-          <Game configureQuiz={configureQuiz} />
+          <GameUi configureQuiz={configureQuiz} />
         )}
       </div>
     </div>
