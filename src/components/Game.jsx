@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
+import GameInfo from "./GameInfo";
+
 function Game({ configureQuiz }) {
+  const [showGameInfo, setShowGameInfo] = useState(true);
   return (
-    <h1>You&apos;ve set the configure of quiz to {configureQuiz.category}</h1>
+    <div>
+      <GameInfo configureQuiz={configureQuiz}/>
+    </div>
   );
 }
 

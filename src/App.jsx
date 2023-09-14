@@ -5,6 +5,7 @@ import ConfigureQuiz from "./components/ConfigureQuiz";
 import Game from "./components/Game";
 
 function App() {
+  // States
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState("");
   const [configureQuiz, setConfigureQuiz] = useState({
