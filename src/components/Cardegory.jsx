@@ -4,7 +4,7 @@ function Card({ title, imgUrl, description, configureQuiz, setConfigureQuiz }) {
     <article
       className={`flex items-center bg-white transition ease-in-out border ${
         configureQuiz.category === title ? "border-blue-500" : ""
-      } hover:border-blue-500 rounded w-4/5 mx-auto cursor-pointer`}
+      } hover:border-blue-500 rounded w-4/5 mx-auto cursor-pointer relative`}
       onClick={() => {
         setConfigureQuiz((configureQuiz) => {
           return { ...configureQuiz, category: title };
@@ -18,13 +18,10 @@ function Card({ title, imgUrl, description, configureQuiz, setConfigureQuiz }) {
           <p className="text-xs text-gray-700">{description}</p>
         </div>
         {configureQuiz.category === title ? (
-          <div className="sm:flex sm:items-end sm:justify-end">
-            <a
-              href="#"
-              className="block bg-blue-500 rounded-tl-lg px-5 py-3 text-center text-xs font-bold uppercase text-white transition"
-            >
+          <div className="sm:flex sm:items-end sm:justify-end absolute right-0">
+            <p className="block bg-blue-500 rounded-bl-lg px-5 py-2 md:py-3 text-center text-xs font-bold uppercase text-white transition">
               Picked ✓
-            </a>
+            </p>
           </div>
         ) : null}
       </div>

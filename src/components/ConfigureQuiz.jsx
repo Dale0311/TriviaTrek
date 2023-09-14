@@ -2,7 +2,7 @@
 import Filter from "./Filter";
 import Category from "./Category";
 import StartQuiz from "./StartQuiz";
-function ConfigureQuiz({ name, configureQuiz, setConfigureQuiz }) {
+function ConfigureQuiz({ name, configureQuiz, setConfigureQuiz, setIsConfigureQuiz}) {
   return (
     <div className="space-y-4">
       <div className="text-white p-4">
@@ -18,7 +18,7 @@ function ConfigureQuiz({ name, configureQuiz, setConfigureQuiz }) {
             configureQuiz={configureQuiz}
             setConfigureQuiz={setConfigureQuiz}
           />
-          <StartQuiz />
+          <StartQuiz configureQuiz={configureQuiz} setIsConfigureQuiz={setIsConfigureQuiz} />
         </div>
       </div>
     </div>
