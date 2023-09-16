@@ -1,5 +1,11 @@
 /* eslint-disable react/prop-types */
-function NumberQuestion({ index, active, setCurrentQuestion, question }) {
+function NumberQuestion({
+  index,
+  active,
+  setCurrentQuestion,
+  question,
+
+}) {
   return (
     <li>
       <a
@@ -8,7 +14,7 @@ function NumberQuestion({ index, active, setCurrentQuestion, question }) {
           active ? "bg-indigo-500" : " bg-gray-500 hover:bg-indigo-500"
         } text-white`}
         onClick={() => {
-          setCurrentQuestion(question)
+          setCurrentQuestion(question);
         }}
       >
         {index}

@@ -11,7 +11,7 @@ function GameUI({ configureQuiz }) {
   const [isLoading, setIsLoading] = useState(true);
   const { category, difficulty } = configureQuiz;
   const cat = category.replace(" ", "_");
-  
+
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -19,7 +19,16 @@ function GameUI({ configureQuiz }) {
         const res = await axios.get(
           `?categories=${cat}&difficulty=${difficulty}`
         );
-        setQuestions(res.data);
+        const data = res.data;
+        setQuestions(
+          data.map((question) => {
+            return {
+              ...question,
+              userAnswer: "",
+              exisistingChoices: [],
+            };
+          })
+        );
         setIsLoading(false);
       } catch (error) {
         alert(error.message);
@@ -39,7 +48,7 @@ function GameUI({ configureQuiz }) {
           configureQuiz={configureQuiz}
         />
       ) : (
-        <Game questions={questions} configureQuiz={configureQuiz} />
+        <Game questions={questions} setQuestions={setQuestions} configureQuiz={configureQuiz} />
       )}
     </>
   );
