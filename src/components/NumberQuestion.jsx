@@ -1,24 +1,15 @@
 /* eslint-disable react/prop-types */
-function NumberQuestion({
-  index,
-  active,
-  setCurrentQuestion,
-  question,
-
-}) {
+function NumberQuestion({ index, active }) {
   return (
     <li>
-      <a
+      <span
         href="#"
         className={`py-3 px-4 rounded-full ${
           active ? "bg-indigo-500" : " bg-gray-500 hover:bg-indigo-500"
         } text-white`}
-        onClick={() => {
-          setCurrentQuestion(question);
-        }}
       >
-        {index}
-      </a>
+        {index + 1}
+      </span>
     </li>
   );
 }
