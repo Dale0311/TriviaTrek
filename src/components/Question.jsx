@@ -11,7 +11,7 @@ function Question({ currentQuestion, index, setCurrentQuestion }) {
           return (
             <li
               key={index}
-              className="flex space-x-4 items-center cursor-pointer"
+              className="flex space-x-4 items-center cursor-pointer group"
               onClick={() => {
                 setCurrentQuestion((oldVal) => {
                   return { ...oldVal, userAnswer: choice };
@@ -27,10 +27,10 @@ function Question({ currentQuestion, index, setCurrentQuestion }) {
                 </>
               ) : (
                 <>
-                  <span className="py-2 px-4 bg-gray-400 text-white rounded-full">
+                  <span className="py-2 px-4 bg-gray-400 text-white rounded-full group-hover:bg-indigo-500">
                     {choice.letter}
                   </span>
-                  <p>{choice.choice}</p>
+                  <p className="group-hover:text-indigo-500">{choice.choice}</p>
                 </>
               )}
             </li>
