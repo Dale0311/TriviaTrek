@@ -19,16 +19,7 @@ function GameUI({ configureQuiz }) {
         const res = await axios.get(
           `?categories=${cat}&difficulty=${difficulty}`
         );
-        const data = res.data;
-        setQuestions(
-          data.map((question) => {
-            return {
-              ...question,
-              userAnswer: "",
-              exisistingChoices: [],
-            };
-          })
-        );
+        setQuestions(res.data);
         setIsLoading(false);
       } catch (error) {
         alert(error.message);
@@ -48,7 +39,11 @@ function GameUI({ configureQuiz }) {
           configureQuiz={configureQuiz}
         />
       ) : (
-        <Game questions={questions} setQuestions={setQuestions} configureQuiz={configureQuiz} />
+        <Game
+          questions={questions}
+          category={category}
+          difficulty={difficulty}
+        />
       )}
     </>
   );

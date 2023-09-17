@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import GameHeader from "./GameHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faList,
@@ -9,12 +10,10 @@ function GameInfo({ configureQuiz, setShowGameInfo }) {
   return (
     <div className="text-white space-y-5 h-full flex flex-col">
       {/* head */}
-      <div className="p-4">
-        <p className="text-lg font-semibold">
-          Category: {configureQuiz.category}
-        </p>
-        <p className="text-sm">Difficulty: {configureQuiz.difficulty}</p>
-      </div>
+      <GameHeader
+        category={configureQuiz.category}
+        difficulty={configureQuiz.difficulty}
+      />
       {/* body */}
       <div className="flex flex-col justify-between space-y-2 text-gray-700 bg-white h-full rounded-t-3xl p-4">
         <p className="bg-gradient-to-r from-indigo-500 to-indigo-400 w-16 rounded h-1 self-center"></p>

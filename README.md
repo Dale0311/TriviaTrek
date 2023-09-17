@@ -20,7 +20,7 @@
    1. Welcome : pop up
    2. ConfigureQuiz
       2.1 Filter
-         2.1.2 Difficulty
+      2.1.2 Difficulty
       2.2 Genre Card Component
       2.3 Btn that start the game
    3. Game
@@ -28,6 +28,9 @@
 4. create a static version of Trivia Trek
 
 #### TBA
+
 1. 2.1.1 GameMode
-      Standard
-      Time's Up Quiz
+   Standard
+   Time's Up Quiz
+
+### GONNA FAKING FINISH THIS WHEN I GET ENOUGH LEVEL, WAIT FOR ME U FAKING FRUSTRATING APP HAHA
