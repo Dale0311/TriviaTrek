@@ -4,7 +4,7 @@ import Question from "./Question";
 import possibleAnswers from "../utils/possibleAnswers";
 import GameHeader from "./GameHeader";
 import Result from "./Result";
-function Game({ category, difficulty, questions, name }) {
+function Game({ category, difficulty, questions, name}) {
   const i = useRef(0);
   const allQuestions = useRef([]);
 
@@ -25,11 +25,7 @@ function Game({ category, difficulty, questions, name }) {
     <div className="h-full flex flex-col">
       <GameHeader category={category} difficulty={difficulty} name={name} />
       {showResult ? (
-        <Result
-          playerAns={allQuestions.current}
-          name={name}
-          questions={questions}
-        />
+        <Result playerAns={allQuestions.current} name={name} />
       ) : (
         <div className="flex-1 bg-white rounded-t-3xl">
           <Question

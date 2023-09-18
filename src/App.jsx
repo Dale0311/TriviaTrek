@@ -22,7 +22,7 @@ function App() {
         showModal={showModal}
         setShowModal={setShowModal}
       />
-      <div className="bg-gradient-to-r from-indigo-500 to-indigo-400 md:w-1/2 mx-auto h-full">
+      <div className="bg-gradient-to-r from-indigo-500 to-indigo-400 lg:w-1/2 mx-auto h-full">
         {isConfigureQuiz ? (
           <ConfigureQuiz
             name={name}
