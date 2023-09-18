@@ -6,13 +6,16 @@ import GameUi from "./components/GameUI";
 
 function App() {
   // States
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
   const [name, setName] = useState("");
   const [configureQuiz, setConfigureQuiz] = useState({
     category: "",
     difficulty: "easy",
   });
   const [isConfigureQuiz, setIsConfigureQuiz] = useState(true);
+  function confQuiz(bool) {
+    setIsConfigureQuiz(bool);
+  }
   return (
     <div className="container mx-auto h-screen">
       {/* Welcome component */}
@@ -31,7 +34,11 @@ function App() {
             setIsConfigureQuiz={setIsConfigureQuiz}
           />
         ) : (
-          <GameUi configureQuiz={configureQuiz} name={name} />
+          <GameUi
+            configureQuiz={configureQuiz}
+            name={name}
+            confQuiz={confQuiz}
+          />
         )}
       </div>
     </div>

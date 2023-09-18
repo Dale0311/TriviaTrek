@@ -4,7 +4,7 @@ import Question from "./Question";
 import possibleAnswers from "../utils/possibleAnswers";
 import GameHeader from "./GameHeader";
 import Result from "./Result";
-function Game({ category, difficulty, questions, name}) {
+function Game({ category, difficulty, questions, name, confQuiz }) {
   const i = useRef(0);
   const allQuestions = useRef([]);
 
@@ -25,7 +25,11 @@ function Game({ category, difficulty, questions, name}) {
     <div className="h-full flex flex-col">
       <GameHeader category={category} difficulty={difficulty} name={name} />
       {showResult ? (
-        <Result playerAns={allQuestions.current} name={name} />
+        <Result
+          playerAns={allQuestions.current}
+          name={name}
+          confQuiz={confQuiz}
+        />
       ) : (
         <div className="flex-1 bg-white rounded-t-3xl">
           <Question
@@ -35,10 +39,10 @@ function Game({ category, difficulty, questions, name}) {
             setCurrentQuestion={setCurrentQuestion}
           />
           {currentQuestion.userAnswer && (
-            <div className="my-8">
+            <div className="my-3">
               {allQuestions.current.length < questions.length - 1 ? (
                 <button
-                  className="rounded disabled:cursor-not-allowed relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-indigo-600 active:shadow-none shadow-lg bg-gradient-to-tr from-indigo-600 to-indigo-500 border-indigo-700 text-white"
+                  className="rounded disabled:cursor-not-allowed relative inline-flex group items-center justify-center px-3.5 py-2 mx-4 md:m-1 cursor-pointer border-b-4 border-l-2 active:border-indigo-600 active:shadow-none shadow-lg bg-gradient-to-tr from-indigo-600 to-indigo-500 border-indigo-700 text-white"
                   onClick={() => {
                     allQuestions.current.push(currentQuestion);
                     i.current++;
@@ -50,7 +54,7 @@ function Game({ category, difficulty, questions, name}) {
                 </button>
               ) : (
                 <button
-                  className="rounded disabled:cursor-not-allowed relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-indigo-600 active:shadow-none shadow-lg bg-gradient-to-tr from-indigo-600 to-indigo-500 border-indigo-700 text-white"
+                  className="rounded disabled:cursor-not-allowed relative inline-flex group items-center justify-center px-3.5 py-2 mx-4 md:m-1 cursor-pointer border-b-4 border-l-2 active:border-indigo-600 active:shadow-none shadow-lg bg-gradient-to-tr from-indigo-600 to-indigo-500 border-indigo-700 text-white"
                   onClick={() => {
                     allQuestions.current.push(currentQuestion);
                     setShowResult(true);

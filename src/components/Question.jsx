@@ -7,7 +7,6 @@ function Question({
   index,
   setCurrentQuestion,
   showResult,
-  result,
   playerAns,
   setShowResult,
 }) {
@@ -55,29 +54,31 @@ function Question({
     return (
       <div className="h-full rounded-t-3xl bg-white space-y-4 mt-10 p-8 md:p-4 relative">
         <div className="flex flex-col space-y-2 md:flex-row justify-between">
-          <button
-            ref={backButtonRef}
-            className="inline-flex items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-md flex-auto"
-            onClick={() => {
-              setShowResult(false);
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          <div>
+            <button
+              ref={backButtonRef}
+              className="inline-flex items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-md flex-initial"
+              onClick={() => {
+                setShowResult(false);
+              }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
-              />
-            </svg>
-            Go back
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
+                />
+              </svg>
+              Go back
+            </button>
+          </div>
           <div className="flex flex-col">
             <div className="flex justify-between items-center space-x-2">
               <p>Your answer: </p>
