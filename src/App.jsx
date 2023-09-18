@@ -31,7 +31,7 @@ function App() {
             setIsConfigureQuiz={setIsConfigureQuiz}
           />
         ) : (
-          <GameUi configureQuiz={configureQuiz} />
+          <GameUi configureQuiz={configureQuiz} name={name} />
         )}
       </div>
     </div>

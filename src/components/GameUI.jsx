@@ -5,7 +5,7 @@ import Game from "./Game";
 import Loading from "./Loading";
 import axios from "../utils/axiosInstance";
 
-function GameUI({ configureQuiz }) {
+function GameUI({ configureQuiz, name }) {
   const [questions, setQuestions] = useState([]);
   const [showGameInfo, setShowGameInfo] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -37,12 +37,14 @@ function GameUI({ configureQuiz }) {
         <GameInfo
           setShowGameInfo={setShowGameInfo}
           configureQuiz={configureQuiz}
+          name={name}
         />
       ) : (
         <Game
           questions={questions}
           category={category}
           difficulty={difficulty}
+          name={name}
         />
       )}
     </>

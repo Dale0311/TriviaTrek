@@ -6,13 +6,14 @@ import {
   faArrowPointer,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
-function GameInfo({ configureQuiz, setShowGameInfo }) {
+function GameInfo({ configureQuiz, setShowGameInfo, name }) {
   return (
     <div className="text-white space-y-5 h-full flex flex-col">
       {/* head */}
       <GameHeader
         category={configureQuiz.category}
         difficulty={configureQuiz.difficulty}
+        name={name}
       />
       {/* body */}
       <div className="flex flex-col justify-between space-y-2 text-gray-700 bg-white h-full rounded-t-3xl p-4">

@@ -4,7 +4,7 @@ function Question({ currentQuestion, index, setCurrentQuestion }) {
   return (
     <div className=" space-y-4 mt-10 p-4">
       <p>
-        {index}. {currentQuestion.question.text}
+        {index + 1}. {currentQuestion.question.text}
       </p>
       <ul className="space-y-4">
         {currentQuestion.choices.map((choice, index) => {
